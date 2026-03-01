@@ -246,11 +246,34 @@ OKABE_ITO = ["#E69F00", "#56B4E9", "#009E73", "#F0E442",
 - **Lab/chart values:** Multiple measurements per stay are common; apply the paper's stated aggregation rule (first value, last value, min, max, or mean within a time window)
 - **Exclusions:** Apply paper's stated exclusions in order (e.g., age < 18, re-admissions, missing key variables); document each step's effect on N
 
+### PostgreSQL Connection (R)
+
+MIMIC-IV is hosted in a local PostgreSQL instance. Use the `data-collector` agent (`.claude/agents/data-collector.md`) to extract tables. The standard R connection is:
+
+```r
+library(DBI)
+library(RPostgres)
+
+con <- dbConnect(
+  RPostgres::Postgres(),
+  dbname   = "mimiciv",
+  host     = "localhost",
+  port     = 5432,
+  user     = "postgres",
+  password = Sys.getenv("MIMIC_DB_PASSWORD", unset = "hello")
+)
+```
+
+**Read-only rule:** Only `SELECT` queries are permitted. The `data-collector` agent enforces this; replication scripts must also never call `INSERT`, `UPDATE`, `DELETE`, or any DDL on this connection.
+
 ---
 
 ## Commands
 
 ```bash
+# Collect data from MIMIC-IV PostgreSQL into data/
+Rscript scripts/R/collect_data.R
+
 # Run R replication script
 Rscript replications/[PaperName]/R/replicate.R
 

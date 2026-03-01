@@ -62,6 +62,9 @@ paper-replicate-agent-demo/
 ## Commands
 
 ```bash
+# Collect data from MIMIC-IV PostgreSQL into data/
+Rscript scripts/R/collect_data.R
+
 # Run R replication script
 Rscript replications/[PaperName]/R/replicate.R
 

@@ -79,12 +79,13 @@ Every script and report gets a score (0–100). Scores below threshold block the
 ## What's Included
 
 <details>
-<summary><strong>4 review roles, 10 workflow prompts, 13 reference guides, 6 templates</strong> (click to expand)</summary>
+<summary><strong>5 review roles, 10 workflow prompts, 13 reference guides, 6 templates</strong> (click to expand)</summary>
 
 ### Review Roles (`.claude/agents/` — reference docs)
 
 | Role | What It Does |
 |------|-------------|
+| `data-collector` | Read-only MIMIC-IV data extraction via PostgreSQL; saves tables to `data/` |
 | `domain-reviewer` | Epidemiology substance review (causal assumptions, methods, MIMIC-IV specifics) |
 | `r-reviewer` | R code quality, reproducibility, and domain correctness |
 | `proofreader` | Grammar, typos, overflow, consistency review |
