@@ -1,4 +1,8 @@
-# CLAUDE.MD -- UKB Empirical Replication Agent
+# Project Reference — UKB Empirical Replication Agent
+
+> **Note:** This repository now uses **GitHub Copilot** as the primary AI assistant.
+> The main instructions file for Copilot is `.github/copilot-instructions.md`.
+> This file is kept as a project reference document.
 
 **Project:** UKB Empirical Replication Agent
 **Institution:** China Agricultural University
@@ -80,20 +84,17 @@ python scripts/quality_score.py replications/[PaperName]/R/replicate.R
 
 ---
 
-## Skills Quick Reference
+## Workflow Quick Reference
 
-| Command | What It Does |
-|---------|-------------|
-| `/replicate-paper [paper.pdf] [data]` | Full 6-phase replication pipeline |
-| `/data-analysis [dataset]` | End-to-end R analysis |
-| `/review-r [file]` | R code quality review |
-| `/review-paper [file]` | Manuscript review |
-| `/lit-review [topic]` | Literature search + synthesis |
-| `/research-ideation [topic]` | Research questions + strategies |
-| `/interview-me [topic]` | Interactive research interview |
-| `/commit [msg]` | Stage, commit, PR, merge |
-| `/proofread [file]` | Grammar/typo review of reports |
-| `/devils-advocate [topic]` | Challenge design decisions |
+| Task | What It Does |
+|------|-------------|
+| Replicate a paper | Full 6-phase replication pipeline |
+| Data analysis | End-to-end R analysis |
+| R code review | R code quality review |
+| Manuscript review | Manuscript review |
+| Literature review | Literature search + synthesis |
+| Research ideation | Research questions + strategies |
+| Proofread | Grammar/typo review of reports |
 
 ---
 

@@ -10,8 +10,9 @@ This folder is a **sandbox** for experimental and exploratory work. All new idea
 
 ## Rules
 
-- See `.claude/rules/exploration-folder-protocol.md` for the full protocol
-- See `.claude/rules/exploration-fast-track.md` for the lightweight workflow
+- See `.github/copilot-instructions.md` for quality thresholds and the full workflow
+- Exploration quality threshold: 60/100 (lower than the production 80/100)
+- Reference guide: `.claude/rules/exploration-fast-track.md`
 
 ## Structure
 

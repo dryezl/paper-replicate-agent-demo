@@ -1,18 +1,22 @@
-# Skill Creation Template
+# Workflow Prompt Template
 
-**Use this template to create domain-specific skills for your academic workflow.**
+**Use this template to document domain-specific workflow prompts for your academic work with GitHub Copilot.**
+
+> **Note:** This template was originally designed for Claude Code skills. With GitHub Copilot, document
+> recurring workflows here and add them as sections in `.github/copilot-instructions.md`, or use them
+> as copy-paste prompts in Copilot Chat.
 
 ---
 
-## When to Create a Custom Skill
+## When to Create a Custom Workflow Prompt
 
-Create a skill when you find yourself:
-- Repeatedly explaining the same 3+ step workflow to Claude
+Create a workflow prompt when you find yourself:
+- Repeatedly explaining the same 3+ step workflow to the AI assistant
 - Needing domain-specific quality checks (citation style, notation consistency, lab protocols)
 - Enforcing field-specific output formats (thesis structure, journal templates, lab notebooks)
 - Coordinating multi-tool workflows (Figma → R → LaTeX, data → analysis → manuscript)
 
-**Don't create a skill for:**
+**Don't create a workflow prompt for:**
 - One-time tasks
 - Workflows that change frequently
 - Simple 1-2 step operations
@@ -21,7 +25,7 @@ Create a skill when you find yourself:
 
 ## Template Structure
 
-Copy the structure below to `.claude/skills/[your-skill-name]/SKILL.md`:
+Add sections like this to `.github/copilot-instructions.md` (or use as a standalone Copilot Chat prompt):
 
 ```markdown
 ---
@@ -82,7 +86,7 @@ Step 3: [Final action and verification]
 
 ## Writing Effective Descriptions
 
-The `description` field determines when Claude loads your skill. Use this structure:
+The description should explain what the workflow does and when to use it clearly enough that you can paste it into Copilot Chat and get the right behavior. Use this structure:
 
 ```
 [What it does] + [When to use it] + [Key capabilities]
@@ -127,7 +131,7 @@ description: Reviews econometric specifications for common errors. Use when user
 
 ### Example 1: Citation Cross-Reference Checker
 
-**File:** `.claude/skills/validate-citations/SKILL.md`
+**Add to `.github/copilot-instructions.md`** or use as a standalone Copilot Chat prompt:
 
 ```markdown
 ---
@@ -183,7 +187,7 @@ Step 4: **Report findings**
 
 ### Example 2: Regression Output Formatter
 
-**File:** `.claude/skills/format-regression-tables/SKILL.md`
+**Add to `.github/copilot-instructions.md`** or use as a standalone Copilot Chat prompt:
 
 ```markdown
 ---
@@ -265,7 +269,7 @@ Step 4: **Save and verify**
 
 ### Example 3: Experimental Protocol Validator
 
-**File:** `.claude/skills/validate-protocol/SKILL.md`
+**Add to `.github/copilot-instructions.md`** or use as a standalone Copilot Chat prompt:
 
 ```markdown
 ---
@@ -323,24 +327,22 @@ Step 4: **Generate report**
 
 ---
 
-## Testing Your Skill
+## Testing Your Workflow Prompt
 
 ### Step 1: Manual Test
-1. Create skill directory: `mkdir -p .claude/skills/your-skill-name`
-2. Copy SKILL.md template and customize
-3. Restart Claude Code or run `/reload` if available
-4. Trigger skill: Use one of your trigger phrases
-5. Verify: Skill loads, instructions are clear, output is correct
+1. Add the workflow section to `.github/copilot-instructions.md` (or paste directly into Copilot Chat)
+2. Trigger with a relevant phrase from the description
+3. Verify: Copilot follows the instructions, output is correct
 
 ### Step 2: Iteration
-- **If skill doesn't trigger:** Revise description with more specific trigger phrases
+- **If Copilot doesn't follow:** Add more explicit trigger phrases; be more specific about the steps
 - **If instructions unclear:** Add more examples and detail to Steps
-- **If output wrong:** Add validation steps, troubleshooting section
+- **If output wrong:** Add validation steps and expected output examples
 
 ### Step 3: Success Criteria
-- ✅ Skill triggers on 90%+ of relevant queries
+- ✅ Copilot follows the workflow correctly on 90%+ of relevant queries
 - ✅ Complete workflow in expected number of steps
-- ✅ Zero API errors during normal operation
+- ✅ Zero errors during normal operation
 - ✅ Same task yields consistent outputs across sessions
 
 ---
@@ -377,7 +379,7 @@ When adapting this template to your domain:
 ## Where This Template Lives
 
 - **File:** `templates/skill-template.md`
-- **Purpose:** Starter for domain-specific skills
-- **Usage:** Copy to `.claude/skills/[name]/SKILL.md`, customize for your field
+- **Purpose:** Starter for domain-specific workflow prompts
+- **Usage:** Add sections to `.github/copilot-instructions.md` or use as standalone Copilot Chat prompts
 
-For existing skills examples, see `.claude/skills/` directory (19 skills for LaTeX, R, Quarto, and research workflows).
+For existing workflow examples, see `.claude/skills/` directory (reference docs for replication, R review, paper review, and other research workflows).
